@@ -17,7 +17,7 @@ function NavBar ({ loggedIn, isCustomer }) {
             <div className='sticky inset-x-0 top-0 h-fit bg-blue-400 flex flex-row justify-between p-5 z-2'>
                 <div>
                     <Link href="/" className='text-blue-950 font-semibold hover:text-blue-800'>
-                        Home
+                        GoodNeighbor
                     </Link>
                 </div>
                 <div className='flex flex-row gap-4'>
@@ -39,7 +39,7 @@ function NavBar ({ loggedIn, isCustomer }) {
             <div className='sticky inset-x-0 top-0 h-fit bg-blue-400 flex flex-row justify-between p-5 z-2'>
                 <div className="mt-2">
                     <Link href="/" className='text-blue-950 font-extrabold hover:text-blue-800'>
-                        Home
+                        GoodNeighbor
                     </Link>
                 </div>
                 <div className='flex flex-row gap-4'>
