@@ -31,9 +31,9 @@ function Body ({ loggedIn, isCustomer, handleLogin }) {
 		body = <Customer_Tasks loggedIn={loggedIn}/>
 	};
 	return (
-			<main className="relative min-h-screen bg-gray-100">
-		      	{body}
-		    </main>
+		<main className="relative min-h-screen bg-gray-100">
+	      	{body}
+	    </main>
 	);
 }
 
