@@ -120,7 +120,7 @@ function Tasks() {
             <div className="w-full">
                 <NavBar loggedIn={true}/>
             </div>
-            <div className="max-w-6xl mx-auto px-6 py-8">
+            <div className="text-xl max-w-6xl mx-auto px-6 py-8">
                 <BrowseTasks tasks={tasks} />
             </div>
             <Footer />

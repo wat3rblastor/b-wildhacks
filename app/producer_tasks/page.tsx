@@ -85,7 +85,7 @@ function Producer_Tasks ({ loggedIn }) {
                 <NavBar loggedIn={true} isCustomer={false} />
             </div>
 
-            <div className="max-w-6xl mx-auto px-3">
+            <div className="text-xl max-w-6xl mx-auto px-3">
                 <ActiveTasks tasks={providerActiveTasks} />
                 <div className="my-12"></div> {/* Spacer between sections */}
                 <PendingTasks tasks={providerPendingTasks} />
