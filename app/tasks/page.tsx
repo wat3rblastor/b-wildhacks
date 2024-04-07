@@ -34,7 +34,7 @@ const generatePlaceholderTasks = () => {
             providerid: null
         },
         {
-            taskid: 2,
+            taskid: 3,
             userid: 1,
             title: "Placeholder Task 2",
             address: "123 Main St",
@@ -46,7 +46,7 @@ const generatePlaceholderTasks = () => {
             providerid: null
         },
         {
-            taskid: 2,
+            taskid: 4,
             userid: 1,
             title: "Placeholder Task 2",
             address: "123 Main St",
@@ -58,7 +58,7 @@ const generatePlaceholderTasks = () => {
             providerid: null
         },
         {
-            taskid: 2,
+            taskid: 5,
             userid: 1,
             title: "Placeholder Task 2",
             address: "123 Main St",
@@ -70,7 +70,7 @@ const generatePlaceholderTasks = () => {
             providerid: null
         },
         {
-            taskid: 2,
+            taskid: 6,
             userid: 1,
             title: "Placeholder Task 2",
             address: "123 Main St",
@@ -82,7 +82,7 @@ const generatePlaceholderTasks = () => {
             providerid: null
         },
         {
-            taskid: 2,
+            taskid: 7,
             userid: 1,
             title: "Placeholder Task 2",
             address: "123 Main St",
@@ -115,6 +115,10 @@ function Tasks() {
     let customerActiveTasks = tasks.filter((task) => task.userid === 1 && task.providerid != null);
     let customerPendingTasks = tasks.filter((task) => task.userid === 1 && task.providerid == null) 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d95b90c (add bid)
     return (
         <>
             <NavBar loggedIn={true}/>
