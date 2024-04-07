@@ -5,10 +5,11 @@ import ActiveTasks from './ActiveTasks';
 import PendingTasks from './PendingTasks';
 
 
-function Customer_Tasks () {
+
+function Customer_Tasks ({ loggedIn }) {
     return (
     <main className="min-h-screen p-24 flex flex-col justify-center">
-        <NavBar/>
+        <NavBar loggedIn={loggedIn} />
         <ActiveTasks />
         <PendingTasks />
     </main>)

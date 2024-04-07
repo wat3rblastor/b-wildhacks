@@ -34,7 +34,7 @@ function NavBar ({ loggedIn }) {
                     </div>
                     <div className='bg-slate-200 p-2 rounded-lg'>
                         <Link href="/login">
-                            Login
+                            Log In
                         </Link>
                     </div>
                 </div>
