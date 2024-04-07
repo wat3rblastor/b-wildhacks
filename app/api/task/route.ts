@@ -19,6 +19,10 @@ const runQuery = async (db, sql, params = []) => {
 };
 
 export async function POST(req, res) {
+
+  console.log(req)
+  console.log(req.text())
+
   if (!db) {
     db = await open({
       filename: "./collection.db",
