@@ -7,9 +7,9 @@ type ActiveTasksProps = {
 const  ActiveTasks  = ({ tasks }: ActiveTasksProps) =>  {
     console.log(tasks)
     return (
-        <div className="w-fit pb-8">
-            <h1 className="text-2xl font-extrabold pb-4">Active Tasks</h1>
-            <div className="flex flex-auto flex-row flex-wrap gap-5">
+        <div className="pb-8">
+            <h1 className="text-3xl font-serif font-bold text-gray-800 mb-6">Active Tasks</h1>
+            <div className="flex flex-wrap gap-6 justify-start items-start">
                 {tasks.map((task) => (
                     <Task key={task.taskid} task={task} isPending={false}/>
                 ))}

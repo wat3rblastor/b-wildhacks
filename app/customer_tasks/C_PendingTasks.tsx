@@ -7,14 +7,12 @@ type PendingTasksProps = {
 
 function PendingTasks({ tasks }: PendingTasksProps) {
     return (
-        <div className="w-fit">
-            <h1 className="text-2xl font-extrabold pb-4">Pending Tasks</h1>
-            <div className="flex flex-row flex-wrap gap-5">
-                {
-                    tasks.map((task) => (
-                        <Task key={task.taskid} task={task} isPending={true}/>
-                    ))
-                }
+        <div className="pb-8">
+            <h1 className="text-3xl font-serif font-bold text-gray-800 mb-6">Pending Tasks</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {tasks.map((task) => (
+                    <Task key={task.taskid} task={task} isPending={true}/>
+                ))}
             </div>
         </div>
     );
