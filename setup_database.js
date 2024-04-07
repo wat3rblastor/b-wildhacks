@@ -91,6 +91,9 @@ const insertTaskQuery = `
     (4, 'Task 4', 'Address 4', '4 hours', 'Location 4', 'Description 4', 1, 200.00, 5),
     (5, 'Task 5', 'Address 5', '5 hours', 'Location 5', 'Description 5', 1, 250.00, 1)
 `;
+    // TODO: ALLOW NULL VALUES FOR providerid
+    // (6, 'Task 6', 'Address 6', '6 hours', 'Location 6', 'Description 6', 1, 300.00, NULL)
+
 //biddings
 const insertBiddingQuery = `
   INSERT INTO biddings (taskid, price, userid) 

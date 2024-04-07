@@ -1,26 +1,29 @@
-function Task () {
+import { Task as TaskModel } from "../interfaces/interfaces";
+
+type TaskProps = {
+    task: TaskModel
+}
+
+function Task ({ task }: TaskProps) {
 	return (
 		<div className="bg-slate-300 w-64 h-96 rounded-md">
         	<div>
-        		<h1>Task Title</h1>
+        		<h1>{task?.title || 'Title'}</h1>
         	</div>
         	<div>
-        		<p>Address</p>
+        		<p>{task?.address || 'Address'}</p>
         	</div>
         	<div>
-        		<p>Duration</p>
+				<p>{task?.duration || 'Duration'}</p>
         	</div>
         	<div>
-        		<p>Location</p>
+				<p>{task?.description || 'Description'}</p>
         	</div>
         	<div>
-        		<p>Description</p>
+				<p>{task?.available || 'Available'}</p>
         	</div>
         	<div>
-        		<p>Available</p>
-        	</div>
-        	<div>
-        		<p>Budget</p>
+				<p>{task?.budget || 'Budget'}</p>
         	</div>
         </div>
 	);

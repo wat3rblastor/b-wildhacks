@@ -1,16 +1,70 @@
+'use client';
 import NavBar from "../components/Navbar";
-import Task from "./C_Task";
+import { useEffect, useState } from "react";
+import { Task } from "../interfaces/interfaces";
 import ActiveTasks from './C_ActiveTasks';
 import PendingTasks from './C_PendingTasks';
 
 
+const generatePlaceholderTasks = () => {
+    // TODO: REMOVE
+    // Added for ease of development of UI
+    return [
+        {
+            taskid: 1,
+            userid: 1,
+            title: "Placeholder Task 1",
+            address: "123 Main St",
+            duration: "1 hour",
+            location: "Location 1",
+            description: "Description 1",
+            available: true,
+            budget: 100,
+            providerid: null
+        },
+        {
+            taskid: 2,
+            userid: 1,
+            title: "Placeholder Task 2",
+            address: "123 Main St",
+            duration: "2 hour",
+            location: "Location 2",
+            description: "Description 2",
+            available: true,
+            budget: 100,
+            providerid: null
+        }
+    ]
 
-function Customer_Tasks ({ loggedIn }) {
+}
+
+function Customer_Tasks({ loggedIn }) {
+
+    // create a tasks state
+    const [tasks, setTasks] = useState<Task[]>([]);
+
+    // fetch tasks with useEffect
+    useEffect(() => {
+        const fetchTasks = async () => {
+            const response = await fetch('/api/tasks');
+            const data: Task[] = await response.json();
+            setTasks([...data]);
+        }
+        fetchTasks()
+    }, [])
+
+    let customerActiveTasks = tasks.filter((task) => task.userid === 1 && task.providerid != null);
+    let customerPendingTasks = tasks.filter((task) => task.userid === 1 && task.providerid == null) 
+
+    // TODO: REMOVE - used to render placeholders for ui dev when needed..
+    customerActiveTasks = customerActiveTasks.length > 0 ? customerActiveTasks : generatePlaceholderTasks();
+    customerPendingTasks = customerPendingTasks.length > 0 ? customerPendingTasks : generatePlaceholderTasks();
+
     return (
     <main className="min-h-screen p-24 flex flex-col justify-center">
         <NavBar loggedIn={loggedIn} />
-        <ActiveTasks />
-        <PendingTasks />
+        <ActiveTasks tasks={customerActiveTasks} />
+        <PendingTasks tasks={customerPendingTasks} />
     </main>)
 }
 
