@@ -82,7 +82,7 @@ function Producer_Tasks ({ loggedIn }) {
         <div>
             {/* Add margin-bottom to NavBar for spacing */}
             <div className="mb-6">
-                <NavBar loggedIn={loggedIn} />
+                <NavBar loggedIn={true} isCustomer={false} />
             </div>
 
             <div className="max-w-6xl mx-auto px-3">

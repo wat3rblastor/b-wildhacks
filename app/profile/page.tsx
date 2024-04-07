@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link'
 
 const ProfilePage = () => {
   // Initialize state for profile information
@@ -111,6 +112,14 @@ const ProfilePage = () => {
               >
                 Save
               </button>
+              <Link href="/">
+                <button
+                  type="submit"
+                  className="ml-5 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  Log Out
+                </button>
+              </Link>
             </div>
           </form>
         </div>
