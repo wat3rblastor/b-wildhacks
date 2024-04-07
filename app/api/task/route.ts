@@ -1,3 +1,4 @@
+import { ListTasksResponse, Task } from "../../interfaces/interfaces";
 import sqlite3 from "sqlite3";
 import { open } from "sqlite";
 
@@ -19,9 +20,9 @@ const runQuery = async (db, sql, params = []) => {
 };
 
 export async function POST(req, res) {
-
-  console.log(req)
-  console.log(req.text())
+  const text = await req.text();
+  const task: Task = JSON.parse(text);
+  console.log(task);
 
   if (!db) {
     db = await open({
@@ -31,8 +32,6 @@ export async function POST(req, res) {
   }
 
   // Assuming req.body is parsed to a JavaScript object. Adjust according to your server setup
-  const task = req.body;
-
   const sql = `
     INSERT INTO tasks (userid, title, address, duration, location, description, available, budget, providerid)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
