@@ -79,11 +79,13 @@ function Producer_Tasks ({ loggedIn }) {
     providerPendingTasks = providerPendingTasks.length > 0 ? providerPendingTasks : generatePlaceholderTasks();
 
     return (
-    <main className="min-h-screen p-24 flex flex-col justify-center">
-        <NavBar loggedIn={loggedIn} />
-        <ActiveTasks tasks={providerActiveTasks} />
-        <PendingTasks tasks={providerPendingTasks} />
-    </main>)
+    <>
+        <NavBar loggedIn={true} />
+        <main className="min-h-screen p-24 flex flex-col justify-center">
+            <ActiveTasks tasks={providerActiveTasks} />
+            <PendingTasks tasks={providerPendingTasks} />
+        </main>)
+    </>);
 }
 
 export default Producer_Tasks;

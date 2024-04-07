@@ -25,7 +25,7 @@ function Customer_Tasks({ loggedIn }) {
 
     return (
         <div>
-            <NavBar loggedIn={loggedIn} isCustomer={true} />
+            <NavBar loggedIn={true} isCustomer={true} />
             <div className="max-w-6xl mx-auto px-3 py-6">
                 <ActiveTasks tasks={customerActiveTasks} />
                 <div className="my-12"></div> {/* Spacer between sections */}
