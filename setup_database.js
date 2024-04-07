@@ -86,18 +86,19 @@ const insertUserQuery = `
 //tasks
 const insertTaskQuery = `
   INSERT INTO tasks (userid, title, address, duration, location, description, available, budget, providerid) 
-  VALUES 
-    (1, 'Help with groceries', '123 Main St', '1 hour', 'Chicago, IL', 'Need assistance with grocery shopping', 0, 50.00, 2),
-    (1, 'Yard work', '456 Elm St', '2 hours', 'Chicago, IL', 'Help needed with mowing and weeding the lawn', 0, 100.00, 2),
-    (1, 'Tutoring session', '789 Oak St', '1.5 hours', 'Chicago, IL', 'Looking for a tutor in math for high school level', 0, 150.00, NULL),
-    (1, 'Moving assistance', '1011 Maple St', '4 hours', 'Chicago, IL', 'Need help with packing and moving furniture', 0, 200.00, NULL),
-    (1, 'Cleaning service', '1415 Walnut St', '3 hours', 'Chicago, IL', 'Help needed with general house cleaning', 0, 300.00, NULL),
-    (1, 'Dog walking', '1617 Cedar St', '1 hour', 'Chicago, IL', 'Need someone to walk my dog in the afternoon', 0, 30.00, NULL),
-    (3, 'Tech support', '1213 Pine St', '2 hours', 'Chicago, IL', 'Assistance required in setting up home Wi-Fi network', 0, 100.00, NULL),
-    (3, 'Painting assistance', '1819 Birch St', '3 hours', 'Chicago, IL', 'Looking for help in painting a room', 0, 80.00, NULL),
-    (3, 'Grocery delivery', '2021 Chestnut St', '1.5 hours', 'Chicago, IL', 'Need groceries delivered to my doorstep', 0, 40.00, NULL),
-    (5, 'Childcare', '2223 Oakwood St', '4 hours', 'Chicago, IL', 'Babysitting service required for a few hours', 0, 100.00, NULL),
-    (5, 'Gardening', '2425 Pineview St', '2 hours', 'Chicago, IL', 'Assistance needed in planting flowers and weeding', 0, 60.00, NULL);
+VALUES 
+    (1, 'Pothole filling', '1001 Oak St', '2 hours', 'Chicago, IL', 'Volunteers needed to fill potholes on Oak St', 0, 50.00, 2),
+    (1, 'Graffiti removal', '2002 Elm St', '3 hours', 'Chicago, IL', 'Community effort to clean graffiti off walls', 0, 80.00, 2),
+    (1, 'Snow removal from sidewalks', '3003 Maple St', '4 hours', 'Chicago, IL', 'Help clear snow from sidewalks to keep the community safe', 0, 100.00, NULL),
+    (1, 'Trash cleanup in the park', '4004 Pine St', '2 hours', 'Chicago, IL', 'Join us in cleaning up the local park to keep it beautiful', 0, 40.00, NULL),
+    (1, 'Community garden maintenance', '5005 Cedar St', '3 hours', 'Chicago, IL', 'Assistance needed in maintaining the community garden', 0, 60.00, NULL),
+    (1, 'Street sweeping', '6006 Walnut St', '2 hours', 'Chicago, IL', 'Help keep the streets clean by sweeping litter', 0, 30.00, NULL),
+    (3, 'Public mural painting', '7007 Elmwood Ave', '5 hours', 'Chicago, IL', 'Join us in painting a community mural to beautify the neighborhood', 0, 150.00, NULL),
+    (3, 'Community center renovation', '8008 Oakwood Dr', '6 hours', 'Chicago, IL', 'Assist in renovating the local community center for better facilities', 0, 200.00, NULL),
+    (3, 'Tree planting', '9009 Maplewood Ln', '3 hours', 'Chicago, IL', 'Help plant trees in the neighborhood to improve air quality and aesthetics', 0, 50.00, NULL),
+    (5, 'Neighborhood watch patrol', '1010 Cherry Ave', '4 hours', 'Chicago, IL', 'Join the neighborhood watch patrol to enhance safety and security', 0, 70.00, NULL),
+    (5, 'Community kitchen volunteering', '1111 Pinehurst Blvd', '3 hours', 'Chicago, IL', 'Volunteer at the community kitchen to help prepare meals for those in need', 0, 50.00, NULL),
+    (5, 'Community library book shelving', '1212 Birchwood Rd', '2 hours', 'Chicago, IL', 'Assist in organizing and shelving books at the community library', 0, 30.00, NULL);
 `;
 
 //biddings
