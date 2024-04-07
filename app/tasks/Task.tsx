@@ -14,7 +14,7 @@ function Task ({ task, isPending }: TaskProps) {
 	}
 
 	return (
-		<a href="/bid" onClick={handleClick} className="inline-block">
+		<Link href={`/bid/${task.taskid}`} onClick={handleClick}>
 			<div className="bg-white w-64 h-auto rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300 ease-in-out">
 				<h1 className="font-serif text-xl text-gray-800 mb-2">{task?.title || 'Title'}</h1>
 
@@ -41,8 +41,7 @@ function Task ({ task, isPending }: TaskProps) {
 					</div>
 				</div>
 			</div>
-		</a>
-
+        </Link>
 	);
 }
 
