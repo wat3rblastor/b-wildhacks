@@ -7,7 +7,11 @@ function NavBar ({ loggedIn }) {
     {
         return (
             <div className='absolute inset-x-0 top-0 h-fit bg-slate-100 flex flex-row justify-between p-5 z-2'>
-                <div>Logo</div>
+                <div>
+                    <Link href="/">
+                        Home
+                    </Link>
+                </div>
                 <div className='flex flex-row gap-4'>
                     <div className='bg-slate-200 p-2 rounded-lg'>
                         <Link href="/add_task">
@@ -25,7 +29,11 @@ function NavBar ({ loggedIn }) {
     } else {
         return (
             <div className='absolute inset-x-0 top-0 h-fit bg-slate-100 flex flex-row justify-between p-5 z-2'>
-                <div>Logo</div>
+                <div>
+                    <Link href="/">
+                        Home
+                    </Link>
+                </div>
                 <div className='flex flex-row gap-4'>
                     <div className='bg-slate-200 p-2 rounded-lg'>
                         <Link href="/signup">
