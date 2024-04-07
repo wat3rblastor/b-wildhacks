@@ -29,7 +29,7 @@ function Body ({ loggedIn, isCustomer }) {
 	};
 	return (
 			<main className="relative min-h-screen bg-gray-100">
-		      <NavBar loggedIn={loggedIn} />
+		      <NavBar loggedIn={loggedIn} isCustomer={isCustomer} />
 		      <div className="p-24">
 		      	{body}
 		      </div>
