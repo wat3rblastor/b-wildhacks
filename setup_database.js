@@ -2,6 +2,7 @@
 //
 // Creates SQLite Database
 // 
+// Delete old database `rm collection.db` 
 // Run `node setup_database.js` to create database
 //
 const sqlite3 = require("sqlite3").verbose();
