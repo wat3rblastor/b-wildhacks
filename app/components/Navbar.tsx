@@ -6,7 +6,7 @@ function NavBar ({ loggedIn }) {
     if (loggedIn)
     {
         return (
-            <div className='absolute inset-x-0 top-0 h-fit bg-slate-100 flex flex-row justify-between p-5 z-2'>
+            <div className='sticky inset-x-0 top-0 h-fit bg-slate-100 flex flex-row justify-between p-5 z-2'>
                 <div>
                     <Link href="/">
                         Home
@@ -28,7 +28,7 @@ function NavBar ({ loggedIn }) {
         );
     } else {
         return (
-            <div className='absolute inset-x-0 top-0 h-fit bg-slate-100 flex flex-row justify-between p-5 z-2'>
+            <div className='sticky inset-x-0 top-0 h-fit bg-slate-100 flex flex-row justify-between p-5 z-2'>
                 <div>
                     <Link href="/">
                         Home

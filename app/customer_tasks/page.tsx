@@ -61,11 +61,11 @@ function Customer_Tasks({ loggedIn }) {
     customerPendingTasks = customerPendingTasks.length > 0 ? customerPendingTasks : generatePlaceholderTasks();
 
     return (
-    <main className="min-h-screen p-24 flex flex-col justify-center">
-        <NavBar loggedIn={loggedIn} />
-        <ActiveTasks tasks={customerActiveTasks} />
-        <PendingTasks tasks={customerPendingTasks} />
-    </main>)
+        <div>
+            <ActiveTasks tasks={customerActiveTasks} />
+            <PendingTasks tasks={customerPendingTasks} />
+        </div>
+        );
 }
 
 export default Customer_Tasks;
