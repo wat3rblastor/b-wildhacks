@@ -1,5 +1,5 @@
 import { Task as TaskModel } from "../interfaces/interfaces";
-import Task from "./tasks";
+import Task from "./Task";
 
 type BrowseTasksProps = {
     tasks: TaskModel[]

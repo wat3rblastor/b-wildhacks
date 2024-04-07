@@ -97,7 +97,7 @@ const generatePlaceholderTasks = () => {
 
 }
 
-function Customer_Tasks({ loggedIn }) {
+function Tasks() {
 
     // create a tasks state
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -115,18 +115,17 @@ function Customer_Tasks({ loggedIn }) {
     let customerActiveTasks = tasks.filter((task) => task.userid === 1 && task.providerid != null);
     let customerPendingTasks = tasks.filter((task) => task.userid === 1 && task.providerid == null) 
 
-    // TODO: REMOVE - used to render placeholders for ui dev when needed..
-    customerActiveTasks = customerActiveTasks.length > 0 ? customerActiveTasks : generatePlaceholderTasks();
-    customerPendingTasks = customerPendingTasks.length > 0 ? customerPendingTasks : generatePlaceholderTasks();
-
     return (
         <>
+            <NavBar loggedIn={true}/>
             <div> 
-                <BrowseTasks tasks={customerActiveTasks} />
+                <BrowseTasks tasks={tasks} />
             </div>
             <Footer />
         </>
         );
 }
 
-export default Customer_Tasks;
+export default Tasks;
+
+
