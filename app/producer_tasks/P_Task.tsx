@@ -8,7 +8,7 @@ function Task ({ task }: TaskProps) {
 	return (
 		<div className="bg-white w-64 h-auto rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300 ease-in-out">
 			<h1 className="font-serif text-xl text-gray-800 mb-4">{task?.title || 'Title'}</h1>
-	
+			<p className="text-sm text-gray-600 mb-4">{task?.description || 'Description not given'}</p>
 			<div className="space-y-4">
 				<div>
 					<p className="font-semibold text-gray-700">Address:</p>
@@ -17,10 +17,6 @@ function Task ({ task }: TaskProps) {
 				<div className="flex items-center gap-2">
 					<p className="font-semibold text-gray-700">Duration:</p>
 					<p className="text-sm text-gray-600">{task?.duration || 'Duration'}</p>
-				</div>
-				<div>
-					<p className="font-semibold text-gray-700">Description:</p>
-					<p className="text-sm text-gray-600">{task?.description || 'Description'}</p>
 				</div>
 				<div className="flex items-center gap-2">
 					<p className="font-semibold text-gray-700">Availability:</p>
