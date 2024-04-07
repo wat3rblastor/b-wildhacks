@@ -76,22 +76,28 @@ const createBiddingsTableQuery = `
 const insertUserQuery = `
   INSERT INTO users (is_consumer, firstname, lastname, email, phone, profilepicturepath, rating) 
   VALUES 
-    (1, 'John', 'Doe', 'john@example.com', '123-456-7890', 'path_to_image1.jpg', 4.5),
-    (0, 'Jane', 'Smith', 'jane@example.com', '987-654-3210', 'path_to_image2.jpg', 3.8),
-    (1, 'Alice', 'Johnson', 'alice@example.com', '111-222-3333', 'path_to_image3.jpg', 5.0),
-    (0, 'Bob', 'Brown', 'bob@example.com', '333-444-5555', 'path_to_image4.jpg', 4.2),
-    (1, 'Eve', 'Williams', 'eve@example.com', '555-666-7777', 'path_to_image5.jpg', 4.7)
+    (1, 'John', 'Doe', 'john@example.com', '123-456-7890', '518bde6b90ef1eaf3eae45a066e2cc3d', 4.5),
+    (0, 'Jane', 'Smith', 'jane@example.com', '987-654-3210', '9b31abe01e67a90f11fc365d311913c4', 3.8),
+    (1, 'Alice', 'Johnson', 'alice@example.com', '111-222-3333', '39fca8c6f285399ce4eccfb99efceb9f', 5.0),
+    (0, 'Bob', 'Brown', 'bob@example.com', '333-444-5555', 'f238e9a48e19d64a78e2035e8e57a52a', 4.2),
+    (1, 'Eve', 'Williams', 'eve@example.com', '555-666-7777', '2c3fd42e894063151144d05b62aeb180', 4.7),
+    (0, 'Michael', 'Johnson', 'michael@example.com', '777-888-9999', 'afeae595d3452864cef76cbed92d1e0f', 4.3);
 `;
 //tasks
 const insertTaskQuery = `
   INSERT INTO tasks (userid, title, address, duration, location, description, available, budget, providerid) 
   VALUES 
-    (1, 'Task 1', 'Address 1', '1 hour', 'Location 1', 'Description 1', 1, 50.00, 2),
-    (2, 'Task 2', 'Address 2', '2 hours', 'Location 2', 'Description 2', 1, 100.00, 3),
-    (3, 'Task 3', 'Address 3', '3 hours', 'Location 3', 'Description 3', 1, 150.00, 4),
-    (4, 'Task 4', 'Address 4', '4 hours', 'Location 4', 'Description 4', 1, 200.00, 5),
-    (5, 'Task 5', 'Address 5', '5 hours', 'Location 5', 'Description 5', 1, 250.00, 1),
-    (5, 'Task 6', 'Address 6', '6 hours', 'Location 6', 'Description 6', 1, 300.00, NULL)
+    (1, 'Help with groceries', '123 Main St', '1 hour', 'Chicago, IL', 'Need assistance with grocery shopping', 0, 50.00, 2),
+    (1, 'Yard work', '456 Elm St', '2 hours', 'Chicago, IL', 'Help needed with mowing and weeding the lawn', 0, 100.00, 2),
+    (1, 'Tutoring session', '789 Oak St', '1.5 hours', 'Chicago, IL', 'Looking for a tutor in math for high school level', 0, 150.00, NULL),
+    (1, 'Moving assistance', '1011 Maple St', '4 hours', 'Chicago, IL', 'Need help with packing and moving furniture', 0, 200.00, NULL),
+    (1, 'Cleaning service', '1415 Walnut St', '3 hours', 'Chicago, IL', 'Help needed with general house cleaning', 0, 300.00, NULL),
+    (1, 'Dog walking', '1617 Cedar St', '1 hour', 'Chicago, IL', 'Need someone to walk my dog in the afternoon', 0, 30.00, NULL),
+    (3, 'Tech support', '1213 Pine St', '2 hours', 'Chicago, IL', 'Assistance required in setting up home Wi-Fi network', 0, 100.00, NULL),
+    (3, 'Painting assistance', '1819 Birch St', '3 hours', 'Chicago, IL', 'Looking for help in painting a room', 0, 80.00, NULL),
+    (3, 'Grocery delivery', '2021 Chestnut St', '1.5 hours', 'Chicago, IL', 'Need groceries delivered to my doorstep', 0, 40.00, NULL),
+    (5, 'Childcare', '2223 Oakwood St', '4 hours', 'Chicago, IL', 'Babysitting service required for a few hours', 0, 100.00, NULL),
+    (5, 'Gardening', '2425 Pineview St', '2 hours', 'Chicago, IL', 'Assistance needed in planting flowers and weeding', 0, 60.00, NULL);
 `;
 
 //biddings
@@ -99,10 +105,14 @@ const insertBiddingQuery = `
   INSERT INTO biddings (taskid, price, userid) 
   VALUES 
     (1, 45.00, 2),
-    (2, 90.00, 3),
+    (2, 90.00, 2),
+    (3, 180.00, 2),
     (3, 135.00, 4),
-    (4, 180.00, 5),
-    (5, 225.00, 1)
+    (3, 135.00, 6),
+    (4, 225.00, 4),
+    (5, 90.00, 2),
+    (6, 90.00, 2),
+    (7, 90.00, 2);
 `;
 
 //
@@ -154,18 +164,18 @@ const selectQuery = (db, query) => {
 
     // Create the tasks table
     await runQuery(db, createTasksTableQuery);
-    console.log('Data inserted into users table successfully');
+    console.log('Tasks table created successfully');
 
     // Create the biddings table
     await runQuery(db, createBiddingsTableQuery);
-    console.log('Data inserted into users table successfully');
+    console.log('Biddings table created successfully');
 
     //
     // Populate tables
     //
     // Insert data into the users table
     await runQuery(db, insertUserQuery);
-    console.log('Data inserted into users table successfully');
+    console.log('Users data inserted successfully');
     
     // Insert data into the tasks table
     await runQuery(db, insertTaskQuery);
