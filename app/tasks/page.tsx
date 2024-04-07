@@ -2,9 +2,8 @@
 import NavBar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { Task } from "../interfaces/interfaces";
-import ActiveTasks from './C_ActiveTasks';
-import PendingTasks from './C_PendingTasks';
 import BrowseTasks from './BrowseTasks';
+import Footer from '../Footer.tsx';
 
 const generatePlaceholderTasks = () => {
     // TODO: REMOVE
@@ -121,9 +120,13 @@ function Customer_Tasks({ loggedIn }) {
     customerPendingTasks = customerPendingTasks.length > 0 ? customerPendingTasks : generatePlaceholderTasks();
 
     return (
-        <div> 
-            <BrowseTasks tasks={customerActiveTasks} />
-        </div>
+        <>
+            <NavBar />
+            <div> 
+                <BrowseTasks tasks={customerActiveTasks} />
+            </div>
+            <Footer />
+        </>
         );
 }
 
