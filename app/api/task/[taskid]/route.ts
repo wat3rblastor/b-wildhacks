@@ -9,20 +9,22 @@ let db = null;
 // Improved runQuery function to handle SQL queries with parameters
 const runQuery = async (db, sql, params = []) => {
   return new Promise((resolve, reject) => {
-    db.run(sql, params, (err) => {
+    db.run(sql, params, function(err) { // "function" is used here to access the "this" keyword which provides the last ID and changes count
       if (err) {
         reject(err);
       } else {
-        resolve();
+        resolve({ id: this.lastID, changes: this.changes });
       }
     });
   });
 };
 
 export async function POST(req, res) {
-  const text = await req.text();
-  const task: Task = JSON.parse(text);
-  console.log(task);
+  // Extract the "providerid" from the URL by splitting the URL and taking the last element
+  const taskid = req.url.split("/").pop();
+
+  // Log the extracted "providerid" to the console (for debugging purposes)
+  console.log(taskid);
 
   if (!db) {
     db = await open({
@@ -33,14 +35,13 @@ export async function POST(req, res) {
 
   // Assuming req.body is parsed to a JavaScript object. Adjust according to your server setup
   const sql = `
-    INSERT INTO tasks (userid, title, address, duration, location, description, available, budget, providerid)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    UPDATE tasks SET providerid = 2 WHERE taskid = ?
   `;
-  const params = [task.userid, task.title, task.address, task.duration, task.location, task.description, task.available ? 1 : 0, task.budget, task.providerid];
+  const params = [taskid];
 
   try {
-    await runQuery(db, sql, params);
-    console.log(`Inserted task with id ${id}, changes made: ${changes}`);
+    const { id, changes } = await runQuery(db, sql, params);
+    console.log(`Updated with id ${id}, changes made: ${changes}`);
     return new Response(JSON.stringify({ id, changes }), {
       headers: { "Content-Type": "application/json" },
       status: 200,
