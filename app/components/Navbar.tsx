@@ -15,6 +15,11 @@ function NavBar ({ loggedIn }) {
                 <div className='flex flex-row gap-4'>
                     <div className='bg-slate-200 p-2 rounded-lg'>
                         <Link href="/add_task" className="text-blue-950 font-semibold hover:text-blue-800">
+                            Browse Tasks
+                        </Link>
+                    </div>
+                    <div className='bg-slate-200 p-2 rounded-lg'>
+                        <Link href="/add_task" className="text-blue-950 font-semibold hover:text-blue-800">
                             Add Tasks
                         </Link>
                     </div>
