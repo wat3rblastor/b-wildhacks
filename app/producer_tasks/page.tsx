@@ -1,7 +1,7 @@
 import NavBar from "../components/Navbar";
-import Task from "./C_Task";
-import ActiveTasks from './C_ActiveTasks';
-import PendingTasks from './C_PendingTasks';
+import Task from "./P_Task";
+import ActiveTasks from './P_ActiveTasks';
+import PendingTasks from './P_PendingTasks';
 
 
 
