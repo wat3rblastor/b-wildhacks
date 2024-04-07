@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import NavBar from "./components/Navbar.tsx"
+import { useState } from "react";
 
 export default function Home() {
+  const [loggedIn, setloggedIn] = useState(true);
+
   return (
     <main className="min-h-screen p-24">
-      <NavBar />
+      <NavBar loggedIn={loggedIn} />
       <div className='bg-red-200 w-full h-96'>
         <h1>TEST</h1>
       </div>
