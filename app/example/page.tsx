@@ -13,15 +13,42 @@ const  Page = () =>  {
     useEffect(() => {
         const fetchTasks = async () => {
             const response = await fetch('/api/tasks');
-            const { data }: ListTasksResponse = await response.json();
-            setTasks(data);
+            const data: Task[] = await response.json();
+            setTasks([...data]);
         }
         fetchTasks()
     }, [])
 
+    const createTask = async () => {
+        const exampleTask : Task = {
+            taskid: 1,
+            userid: 1, // Defaulut Customer
+            title: "Test Task",
+            description: "Test Description",
+            address: "123 Main Street",
+            duration: "1 hour",
+            location: "123 Main Street",
+            available: true,
+            budget: 100,
+            providerId: null
+        }
+        const response = await fetch("/api/task", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+            body: JSON.stringify(
+              exampleTask
+          ),
+        });
+    }
+    // createTask();
+
+
+
+
 
     return (
-        
         <main className="min-h-screen p-24 flex flex-col justify-center">
         <NavBar/>
         {tasks.map((task) => (
@@ -30,6 +57,7 @@ const  Page = () =>  {
                 <p>{task.description}</p>
             </div>
         ))}
+        <button onClick={createTask}>Create Task</button>
         <div className="w-fit">
             <h1>Active Tasks</h1>
             <div className="grid grid-flow-col grid-cols-3 gap-5">

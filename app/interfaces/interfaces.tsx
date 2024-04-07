@@ -1,4 +1,4 @@
-interface Task {
+export type Task  = {
     taskid: number;
     userid: number; // Assuming it references an existing user
     title: string;
