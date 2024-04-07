@@ -6,24 +6,32 @@ type TaskProps = {
 
 function Task ({ task }: TaskProps) {
 	return (
-		<div className="bg-slate-300 w-64 h-96 rounded-md">
+		<div className="bg-slate-300 w-64 h-96 rounded-md shadow-lg border border-slate-500 p-2">
         	<div>
-        		<h1>{task?.title || 'Title'}</h1>
+        		<h1 className="font-extrabold text-xl">{task?.title || 'Title'}</h1>
         	</div>
         	<div>
-        		<p>{task?.address || 'Address'}</p>
+        		<p className="font-semibold">Address:</p>
+        		<p className="">{task?.address || 'Not Given.'}</p>
         	</div>
-        	<div>
-				<p>{task?.duration || 'Duration'}</p>
+        	<div className="inline-flex gap-2">
+        		<p className="font-semibold">Duration:</p>
+				<p>{task?.duration || 'N/A'}</p>
         	</div>
-        	<div>
-				<p>{task?.description || 'Description'}</p>
+        	<br/>
+        	<div className="inline-flex gap-2">
+        		<p className="font-semibold">Availablity:</p>
+				<p>{task?.available || 'Loading...'}</p>
         	</div>
-        	<div>
-				<p>{task?.available || 'Available'}</p>
+        	<br/>
+        	<div className="inline-flex gap-2">
+        		<p className="font-semibold">Budget:</p>
+				<p>{task?.budget || 'Budget not given.'}</p>
         	</div>
+        	<br/>
         	<div>
-				<p>{task?.budget || 'Budget'}</p>
+        		<p className="font-semibold">Description:</p>
+				<p>{task?.description || 'Description not given'}</p>
         	</div>
         </div>
 	);

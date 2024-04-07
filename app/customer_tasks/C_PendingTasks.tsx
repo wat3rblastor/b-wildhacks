@@ -8,7 +8,7 @@ type PendingTasksProps = {
 function PendingTasks({ tasks }: PendingTasksProps) {
     return (
         <div className="w-fit">
-            <h1>Pending Tasks</h1>
+            <h1 className="text-2xl font-extrabold">Pending Tasks</h1>
             <div className="grid grid-flow-col grid-cols-3 gap-5">
                 {
                     tasks.map((task) => (
