@@ -9,7 +9,7 @@ function Body ({ loggedIn, isCustomer, handleLogin }) {
 		<div>
 			<NavBar loggedIn={loggedIn} isCustomer={isCustomer} />
 			<div className="p-24">
-				<div className="bg-red-200 w-full h-80">
+				<div className="w-full h-80">
 			        <Image src={Community} className="object-cover w-full h-80" />
 			      </div>
 			     <div className="my-10">
