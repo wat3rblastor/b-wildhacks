@@ -79,13 +79,20 @@ function Producer_Tasks ({ loggedIn }) {
     providerPendingTasks = providerPendingTasks.length > 0 ? providerPendingTasks : generatePlaceholderTasks();
 
     return (
-    <>
-        <NavBar loggedIn={true} />
-        <main className="min-h-screen p-24 flex flex-col justify-center">
-            <ActiveTasks tasks={providerActiveTasks} />
-            <PendingTasks tasks={providerPendingTasks} />
-        </main>)
-    </>);
+        <div>
+            {/* Add margin-bottom to NavBar for spacing */}
+            <div className="mb-6">
+                <NavBar loggedIn={loggedIn} />
+            </div>
+
+            <div className="max-w-6xl mx-auto px-3">
+                <ActiveTasks tasks={providerActiveTasks} />
+                <div className="my-12"></div> {/* Spacer between sections */}
+                <PendingTasks tasks={providerPendingTasks} />
+            </div>
+        </div>
+    );
+    
 }
 
 export default Producer_Tasks;
