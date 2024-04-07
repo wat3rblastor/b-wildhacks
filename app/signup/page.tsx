@@ -27,6 +27,10 @@ const SignUpPage = () => {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
+              <input type="radio" name="Producer" /> Producer 
+              <input type="radio" name="Customer" className="ml-4"/> Customer
+            </div>
+            <div>
               <label htmlFor="email-address" className="sr-only">Email address</label>
               <input
                 id="email-address"
