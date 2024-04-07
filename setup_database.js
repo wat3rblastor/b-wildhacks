@@ -89,10 +89,9 @@ const insertTaskQuery = `
     (2, 'Task 2', 'Address 2', '2 hours', 'Location 2', 'Description 2', 1, 100.00, 3),
     (3, 'Task 3', 'Address 3', '3 hours', 'Location 3', 'Description 3', 1, 150.00, 4),
     (4, 'Task 4', 'Address 4', '4 hours', 'Location 4', 'Description 4', 1, 200.00, 5),
-    (5, 'Task 5', 'Address 5', '5 hours', 'Location 5', 'Description 5', 1, 250.00, 1)
+    (5, 'Task 5', 'Address 5', '5 hours', 'Location 5', 'Description 5', 1, 250.00, 1),
+    (5, 'Task 6', 'Address 6', '6 hours', 'Location 6', 'Description 6', 1, 300.00, NULL)
 `;
-    // TODO: ALLOW NULL VALUES FOR providerid
-    // (6, 'Task 6', 'Address 6', '6 hours', 'Location 6', 'Description 6', 1, 300.00, NULL)
 
 //biddings
 const insertBiddingQuery = `
