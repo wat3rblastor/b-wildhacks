@@ -1,4 +1,3 @@
-
 import Footer from "../Footer.tsx";
 
 const BidForm = () => {

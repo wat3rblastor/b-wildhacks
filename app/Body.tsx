@@ -4,7 +4,7 @@ import Customer_Tasks from './customer_tasks/page.tsx'
 import Community from '../public/community.jpg'
 import Link from 'next/link';
 
-function Body ({ loggedIn }) {
+function Body ({ loggedIn, isCustomer }) {
 	let body = (
 		<div>
 			<div className="bg-red-200 w-full h-80">

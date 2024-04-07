@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default function Home() {
   const [loggedIn, setloggedIn] = useState(true);
-  const [isCustomer, setisCustomer] = useState(false);
+  const [isCustomer, setisCustomer] = useState(true);
 
   return (
     <>
