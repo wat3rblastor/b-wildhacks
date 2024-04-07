@@ -5,48 +5,13 @@ type TaskProps = {
     task: TaskModel
 }
 
-<<<<<<< HEAD
 function Task ({ task, isPending }: TaskProps) {
-
-
-	return (
-		<div className="bg-slate-300 w-64 h-96 rounded-md shadow-lg border border-slate-500 p-4">
-        	<div>
-        		<h1 className="font-extrabold text-xl">{task?.title || 'Title'}</h1>
-        	</div>
-        	<div>
-        		<p className="font-semibold">Address:</p>
-        		<p className="">{task?.address || 'Not Given.'}</p>
-        	</div>
-        	<div className="inline-flex gap-2">
-        		<p className="font-semibold">Duration:</p>
-				<p>{task?.duration || 'N/A'}</p>
-        	</div>
-        	<br/>
-        	<div className="inline-flex gap-2">
-        		<p className="font-semibold">Availablity:</p>
-				<p>{task?.available || 'Loading...'}</p>
-        	</div>
-        	<br/>
-        	<div className="inline-flex gap-2">
-        		<p className="font-semibold">Budget:</p>
-				<p>{task?.budget || 'Budget not given.'}</p>
-        	</div>
-        	<br/>
-        	<div>
-        		<p className="font-semibold">Description:</p>
-				<p>{task?.description || 'Description not given'}</p>
-        	</div>
-        	
-        </div>
-=======
-function Task ({ task }) {
+	
 	function handleClick() {
-			console.log("Something clicked");
+		console.log("Something clicked");
 	}
 
 	return (
-
 		<a href="/bid" onClick={handleClick}>
 			<div className="bg-slate-300 w-64 h-96 rounded-md shadow-lg border border-slate-500 p-4" onClick={() => routeChange(task)}>
 	        	<div>
@@ -78,7 +43,6 @@ function Task ({ task }) {
 	        	
 	        </div>
         </a>
->>>>>>> d95b90c (add bid)
 	);
 }
 

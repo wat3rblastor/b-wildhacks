@@ -115,10 +115,6 @@ function Tasks() {
     let customerActiveTasks = tasks.filter((task) => task.userid === 1 && task.providerid != null);
     let customerPendingTasks = tasks.filter((task) => task.userid === 1 && task.providerid == null) 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d95b90c (add bid)
     return (
         <>
             <NavBar loggedIn={true}/>
