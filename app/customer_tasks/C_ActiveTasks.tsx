@@ -11,7 +11,7 @@ const  ActiveTasks  = ({ tasks }: ActiveTasksProps) =>  {
             <h1 className="text-2xl font-extrabold pb-4">Active Tasks</h1>
             <div className="flex flex-auto flex-row flex-wrap gap-5">
                 {tasks.map((task) => (
-                    <Task key={task.taskid} task={task} />
+                    <Task key={task.taskid} task={task} isPending={false}/>
                 ))}
             </div>
         </div>

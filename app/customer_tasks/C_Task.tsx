@@ -4,7 +4,23 @@ type TaskProps = {
     task: TaskModel
 }
 
-function Task ({ task }: TaskProps) {
+function Task ({ task, isPending }: TaskProps) {
+
+	let people = (
+		<div>
+    		<p className="font-semibold">People who have applied:</p>
+    	</div>
+	);
+
+	if (!isPending) {
+		people = (
+			<div>
+    			<p className="font-semibold">Person doing task:</p>
+    		</div>
+		);
+	}
+
+
 	return (
 		<div className="bg-slate-300 w-64 h-96 rounded-md shadow-lg border border-slate-500 p-4">
         	<div>
@@ -33,6 +49,10 @@ function Task ({ task }: TaskProps) {
         		<p className="font-semibold">Description:</p>
 				<p>{task?.description || 'Description not given'}</p>
         	</div>
+        	{people}
+
+
+        	
         </div>
 	);
 }

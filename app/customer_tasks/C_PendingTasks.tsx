@@ -12,7 +12,7 @@ function PendingTasks({ tasks }: PendingTasksProps) {
             <div className="flex flex-row flex-wrap gap-5">
                 {
                     tasks.map((task) => (
-                        <Task key={task.taskid} task={task} />
+                        <Task key={task.taskid} task={task} isPending={true}/>
                     ))
                 }
             </div>

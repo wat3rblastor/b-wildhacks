@@ -102,7 +102,6 @@ function Customer_Tasks({ loggedIn }) {
 
     // create a tasks state
     const [tasks, setTasks] = useState<Task[]>([]);
-    const[isPending, setisPending] = useState(true);
 
     // fetch tasks with useEffect
     useEffect(() => {
