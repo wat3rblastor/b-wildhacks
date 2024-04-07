@@ -1,8 +1,5 @@
 
 // create data type for response
-type listTasksResponse = {
-    data: Task[]
-}
 
 // interface Task {
 //     taskid: number;
@@ -20,7 +17,7 @@ type listTasksResponse = {
 
 export async function GET(req, res) {
     // Check if the database instance has been initialized
-    const response: listTasksResponse = {
+    const response: ListTasksResponse = {
         // use interface to create some mock data
         data: [
             {

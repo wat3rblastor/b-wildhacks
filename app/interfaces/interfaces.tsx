@@ -8,6 +8,9 @@ interface Task {
     description: string;
     available: boolean;
     budget: number;
-    providerid: number; // Assuming it references an existing user, can be nullable if not always set
+    providerId: number; // Assuming it references an existing user, can be nullable if not always set
   }
   
+export type ListTasksResponse = {
+    data: Task[]
+}
