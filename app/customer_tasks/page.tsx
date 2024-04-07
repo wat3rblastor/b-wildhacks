@@ -25,19 +25,11 @@ function Customer_Tasks({ loggedIn }) {
 
     return (
         <div>
-<<<<<<< HEAD
-            <div className="w-full">
-                <NavBar loggedIn={true} isCustomer={true}/>
-            </div>
-            <div className="max-w-6xl mx-auto px-6 py-8">
+            <div className="max-w-6xl mx-auto px-3 py-6">
                 <ActiveTasks tasks={customerActiveTasks} />
                 <div className="my-12"></div> {/* Spacer between sections */}
                 <PendingTasks tasks={customerPendingTasks} />
             </div>
-=======
-            <ActiveTasks tasks={customerActiveTasks} />
-            <PendingTasks tasks={customerPendingTasks} />
->>>>>>> c1376f6 (fix navbar)
         </div>
         );
 }
