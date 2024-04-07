@@ -79,8 +79,9 @@ const insertUserQuery = `
 `;
 
 //
-// Helper Function to execute an SQL query with async/await (promise wrapper)
+// Promise wrappers
 //
+// Helper Function to execute an SQL query with async/await
 const runQuery = (db, query) => {
   return new Promise((resolve, reject) => {
     db.run(query, (err) => {
@@ -88,6 +89,18 @@ const runQuery = (db, query) => {
         reject(err);
       } else {
         resolve();
+      }
+    });
+  });
+};
+// Helper Function to execute an SQL select with async/await
+const selectQuery = (db, query) => {
+  return new Promise((resolve, reject) => {
+    db.all(query, (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(rows);
       }
     });
   });
@@ -126,24 +139,30 @@ const runQuery = (db, query) => {
     // Insert data into the users table
     await runQuery(db, insertUserQuery);
     console.log('Data inserted into users table successfully');
+    
+    // Insert data into the tasks table
+    await runQuery(db, insertTaskQuery);
+    console.log('Tasks data inserted successfully');
 
+    // Insert data into the biddings table
+    await runQuery(db, insertBiddingQuery);
+    console.log('Biddings data inserted successfully');
 
     // Retrieve and display the inserted data
-    const rows = await new Promise((resolve, reject) => {
-      db.all('SELECT * FROM users', (err, rows) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(rows);
-        }
-      });
-    });
+    const usersData = await selectQuery(db, 'SELECT * FROM users');
     console.log('Users data:');
-    console.log(rows);
+    console.log(usersData);
+
+    const tasksData = await selectQuery(db, 'SELECT * FROM tasks');
+    console.log('Tasks data:');
+    console.log(tasksData);
+
+    const biddingsData = await selectQuery(db, 'SELECT * FROM biddings');
+    console.log('Biddings data:');
+    console.log(biddingsData);
   } catch (err) {
     console.error('Error:', err);
   } finally {
-    // Close the database connection
     db.close();
   }
 })();
