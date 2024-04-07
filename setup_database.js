@@ -45,37 +45,61 @@ const createTasksTableQuery = `
   CREATE TABLE IF NOT EXISTS tasks (
     taskid INTEGER PRIMARY KEY AUTOINCREMENT,
     userid INTEGER,
-    FOREIGN KEY (userid) REFERENCES users(userid),
-    title VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    duration TIME,
-    location VARCHAR(255),
+    title TEXT NOT NULL,
+    address TEXT NOT NULL,
+    duration TEXT,
+    location TEXT,
     description TEXT,
     available BOOLEAN,
     budget DECIMAL(10, 2),
     providerid INTEGER,
+    FOREIGN KEY (userid) REFERENCES users(userid),
     FOREIGN KEY (providerid) REFERENCES users(userid)
-);`;
+  );
+`;
 //biddings
 const createBiddingsTableQuery = `
   CREATE TABLE IF NOT EXISTS biddings (
     biddingid INTEGER PRIMARY KEY AUTOINCREMENT,
     taskid INTEGER,
-    FOREIGN KEY (taskid) REFERENCES tasks(taskid),
     price DECIMAL(10, 2) NOT NULL,
     userid INTEGER,
+    FOREIGN KEY (taskid) REFERENCES tasks(taskid),
     FOREIGN KEY (userid) REFERENCES users(userid)
 );`;
 
 //
-// Populate users table
+// Populate tables
 //
+//users
 const insertUserQuery = `
   INSERT INTO users (is_consumer, firstname, lastname, email, phone, profilepicturepath, rating) 
   VALUES 
     (1, 'John', 'Doe', 'john@example.com', '123-456-7890', 'path_to_image1.jpg', 4.5),
     (0, 'Jane', 'Smith', 'jane@example.com', '987-654-3210', 'path_to_image2.jpg', 3.8),
-    (1, 'Alice', 'Johnson', 'alice@example.com', '111-222-3333', 'path_to_image3.jpg', 5.0)
+    (1, 'Alice', 'Johnson', 'alice@example.com', '111-222-3333', 'path_to_image3.jpg', 5.0),
+    (0, 'Bob', 'Brown', 'bob@example.com', '333-444-5555', 'path_to_image4.jpg', 4.2),
+    (1, 'Eve', 'Williams', 'eve@example.com', '555-666-7777', 'path_to_image5.jpg', 4.7)
+`;
+//tasks
+const insertTaskQuery = `
+  INSERT INTO tasks (userid, title, address, duration, location, description, available, budget, providerid) 
+  VALUES 
+    (1, 'Task 1', 'Address 1', '1 hour', 'Location 1', 'Description 1', 1, 50.00, 2),
+    (2, 'Task 2', 'Address 2', '2 hours', 'Location 2', 'Description 2', 1, 100.00, 3),
+    (3, 'Task 3', 'Address 3', '3 hours', 'Location 3', 'Description 3', 1, 150.00, 4),
+    (4, 'Task 4', 'Address 4', '4 hours', 'Location 4', 'Description 4', 1, 200.00, 5),
+    (5, 'Task 5', 'Address 5', '5 hours', 'Location 5', 'Description 5', 1, 250.00, 1)
+`;
+//biddings
+const insertBiddingQuery = `
+  INSERT INTO biddings (taskid, price, userid) 
+  VALUES 
+    (1, 45.00, 2),
+    (2, 90.00, 3),
+    (3, 135.00, 4),
+    (4, 180.00, 5),
+    (5, 225.00, 1)
 `;
 
 //
