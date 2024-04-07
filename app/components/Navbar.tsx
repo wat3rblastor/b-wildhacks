@@ -1,10 +1,18 @@
 import Link from 'next/link';
 
 
-function NavBar ({ loggedIn }) {
+function NavBar ({ loggedIn, isCustomer }) {
 
     if (loggedIn)
     {
+        let x = "Add Tasks"
+        let y = "/add_task"
+        if (!isCustomer) {
+            x = "Browse Tasks"
+            y = "/tasks"
+        }
+
+
         return (
             <div className='sticky inset-x-0 top-0 h-fit bg-blue-400 flex flex-row justify-between p-5 z-2'>
                 <div>
@@ -14,13 +22,8 @@ function NavBar ({ loggedIn }) {
                 </div>
                 <div className='flex flex-row gap-4'>
                     <div className='bg-slate-200 p-2 rounded-lg'>
-                        <Link href="/add_task" className="text-blue-950 font-semibold hover:text-blue-800">
-                            Browse Tasks
-                        </Link>
-                    </div>
-                    <div className='bg-slate-200 p-2 rounded-lg'>
-                        <Link href="/add_task" className="text-blue-950 font-semibold hover:text-blue-800">
-                            Add Tasks
+                        <Link href={`${y}`} className="text-blue-950 font-semibold hover:text-blue-800">
+                            {x}
                         </Link>
                     </div>
                     <div className='bg-slate-200 p-2 rounded-lg'>
@@ -33,7 +36,7 @@ function NavBar ({ loggedIn }) {
         );
     } else {
         return (
-            <div className='sticky inset-x-0 top-0 h-fit bg-blue-300 flex flex-row justify-between p-5 z-2'>
+            <div className='sticky inset-x-0 top-0 h-fit bg-blue-400 flex flex-row justify-between p-5 z-2'>
                 <div className="mt-2">
                     <Link href="/" className='text-blue-950 font-extrabold hover:text-blue-800'>
                         Home

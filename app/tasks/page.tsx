@@ -121,7 +121,6 @@ function Customer_Tasks({ loggedIn }) {
 
     return (
         <>
-            <NavBar />
             <div> 
                 <BrowseTasks tasks={customerActiveTasks} />
             </div>

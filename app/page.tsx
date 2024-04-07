@@ -6,11 +6,11 @@ import Footer from "./Footer";
 
 export default function Home() {
   const [loggedIn, setloggedIn] = useState(true);
-  const [isCusstomer, setisCustomer] = useState(false);
+  const [isCustomer, setisCustomer] = useState(false);
 
   return (
     <>
-      <Body loggedIn={false} />
+      <Body loggedIn={loggedIn} isCustomer={isCustomer}/>
       <Footer />
     </>
   );
