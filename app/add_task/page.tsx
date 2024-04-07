@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { createTask } from '../client/client';
 
 const AddTaskPage = () => {
   // Initialize state for task details
@@ -38,14 +39,24 @@ const AddTaskPage = () => {
   // Handler for submitting the form (could be used for API calls to add task)
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can add logic to submit the task details
-    console.log('Task Details:', {
-      taskName,
-      address,
-      budget,
-      duration,
-      description,
-    });
+
+    createTask(
+      {
+        // form input
+        title: taskName,
+        address: address,
+        budget:  parseFloat(budget),
+        duration: duration,
+        description: description,
+
+        // other task fields
+        taskid: 1, // TODO: remove
+        userid: 1,
+        available: true,
+        providerid: null,
+        location: ''
+      }
+    )
   };
 
   return (

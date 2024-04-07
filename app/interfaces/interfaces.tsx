@@ -8,7 +8,7 @@ export type Task  = {
     description: string;
     available: boolean;
     budget: number;
-    providerId: number; // Assuming it references an existing user, can be nullable if not always set
+    providerid: number | null; // Assuming it references an existing user, can be nullable if not always set
   }
   
 export type ListTasksResponse = {
