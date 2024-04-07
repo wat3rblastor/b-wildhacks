@@ -5,8 +5,8 @@ import Body from "./Body";
 import Footer from "./Footer";
 
 export default function Home() {
-  const [loggedIn, setloggedIn] = useState(true);
-  const [isCusstomer, setisCustomer] = useState(true);
+  const [loggedIn, setloggedIn] = useState(false);
+  const [isCusstomer, setisCustomer] = useState(false);
 
   return (
     <>

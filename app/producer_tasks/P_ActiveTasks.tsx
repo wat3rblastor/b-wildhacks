@@ -8,8 +8,8 @@ const  ActiveTasks  = ({ tasks }: ActiveTasksProps) =>  {
     console.log(tasks)
     return (
         <div className="w-fit">
-            <h1 className="text-2xl font-extrabold">Active Tasks</h1>
-            <div className="grid grid-flow-col grid-cols-3 gap-5">
+            <h1 className="text-2xl font-extrabold pb-4">Active Tasks</h1>
+            <div className="flex flex-auto flex-row flex-wrap gap-5">
                 {tasks.map((task) => (
                     <Task key={task.taskid} task={task} />
                 ))}

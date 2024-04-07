@@ -6,7 +6,7 @@ type TaskProps = {
 
 function Task ({ task }: TaskProps) {
 	return (
-		<div className="bg-slate-300 w-64 h-96 rounded-md">
+		<div className="bg-slate-300 w-64 h-96 rounded-md shadow-lg border border-slate-500 p-4">
         	<div>
         		<h1>{task?.title || 'Title'}</h1>
         	</div>

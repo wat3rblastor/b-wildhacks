@@ -16,7 +16,7 @@ const Footer = () => {
           </Link>
           {/* Add more links as needed */}
         </div>
-        <div className="mb-4">© {new Date().getFullYear()} Your Company Name</div>
+        <div className="mb-4">© {new Date().getFullYear()} GoodNeighbor</div>
         <div className="flex justify-center space-x-4">
           <a href="#" className="hover:text-gray-400">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

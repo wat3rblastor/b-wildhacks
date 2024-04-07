@@ -33,6 +33,66 @@ const generatePlaceholderTasks = () => {
             available: true,
             budget: 100,
             providerid: null
+        },
+        {
+            taskid: 2,
+            userid: 1,
+            title: "Placeholder Task 2",
+            address: "123 Main St",
+            duration: "2 hour",
+            location: "Location 2",
+            description: "Description 2",
+            available: true,
+            budget: 100,
+            providerid: null
+        },
+        {
+            taskid: 2,
+            userid: 1,
+            title: "Placeholder Task 2",
+            address: "123 Main St",
+            duration: "2 hour",
+            location: "Location 2",
+            description: "Description 2",
+            available: true,
+            budget: 100,
+            providerid: null
+        },
+        {
+            taskid: 2,
+            userid: 1,
+            title: "Placeholder Task 2",
+            address: "123 Main St",
+            duration: "2 hour",
+            location: "Location 2",
+            description: "Description 2",
+            available: true,
+            budget: 100,
+            providerid: null
+        },
+        {
+            taskid: 2,
+            userid: 1,
+            title: "Placeholder Task 2",
+            address: "123 Main St",
+            duration: "2 hour",
+            location: "Location 2",
+            description: "Description 2",
+            available: true,
+            budget: 100,
+            providerid: null
+        },
+        {
+            taskid: 2,
+            userid: 1,
+            title: "Placeholder Task 2",
+            address: "123 Main St",
+            duration: "2 hour",
+            location: "Location 2",
+            description: "Description 2",
+            available: true,
+            budget: 100,
+            providerid: null
         }
     ]
 
