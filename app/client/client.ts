@@ -1,6 +1,7 @@
-import { Task } from "../interfaces/interfaces";
+import { Bid, Task } from "../interfaces/interfaces";
 
 export const createTask = async (task: Task) => {
+  console.log('In createTask')
     // const exampleTask : Task = {
     //     taskid: 1,
     //     userid: 1, // Defaulut Customer
@@ -22,5 +23,28 @@ export const createTask = async (task: Task) => {
          task
       ),
     });
+    console.log('Finished createTask')
 }
-// createTask();
+
+export const createBid = async (bid: Bid) => {
+  console.log('In createBid')
+  // const exampleBid: Bid = {
+  //   biddingid: 1,
+  //   taskid: 1,
+  //   price: 45.00,
+  //   userid: 2, // Default Provider
+  //   }
+  console.log(bid)
+
+    const response = await fetch("/api/bid", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+        body: JSON.stringify(
+         bid
+        //  exampleBid
+      ),
+    });
+    console.log('Finished createBid')
+}

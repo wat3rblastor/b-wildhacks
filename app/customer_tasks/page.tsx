@@ -25,6 +25,7 @@ function Customer_Tasks({ loggedIn }) {
 
     return (
         <div>
+            <NavBar loggedIn={true} isCustomer={true}/>
             <ActiveTasks tasks={customerActiveTasks} />
             <PendingTasks tasks={customerPendingTasks} />
         </div>

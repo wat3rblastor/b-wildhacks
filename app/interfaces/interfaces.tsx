@@ -14,3 +14,10 @@ export type Task  = {
 export type ListTasksResponse = {
     data: Task[]
 }
+
+export type Bid  = {
+  biddingid: number;
+  taskid: number;
+  price: number;
+  userid: number;
+  }

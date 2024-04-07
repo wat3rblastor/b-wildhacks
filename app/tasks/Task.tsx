@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { createBid } from "../client/client";
 import { Task as TaskModel } from "../interfaces/interfaces";
 import Link from 'next/link';
 

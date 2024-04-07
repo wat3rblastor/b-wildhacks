@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { createTask } from '../client/client';
+import { useRouter } from 'next/navigation';
 
 const AddTaskPage = () => {
   // Initialize state for task details
@@ -36,8 +37,9 @@ const AddTaskPage = () => {
     setDescription(e.target.value);
   };
 
+    const router = useRouter();
   // Handler for submitting the form (could be used for API calls to add task)
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     createTask(
@@ -57,6 +59,12 @@ const AddTaskPage = () => {
         location: ''
       }
     )
+
+    await setTimeout(() => {}, 1000)
+
+    console.log('redirecting')
+    router.push('/customer_tasks')
+
   };
 
   return (
