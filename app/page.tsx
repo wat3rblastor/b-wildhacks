@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <>
-      <Body loggedIn={loggedIn} />
+      <Body loggedIn={false} />
       <Footer />
     </>
   );
